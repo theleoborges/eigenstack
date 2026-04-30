@@ -1,0 +1,54 @@
+:root {
+  --bg: #f4f1ea;
+  --paper: #fbf9f3;
+  --ink: #1a1a17;
+  --ink-soft: #5a564e;
+  --ink-faint: #8a857a;
+  --rule: #c9c2b3;
+  --accent: #5e7a4b;
+
+  --display: "Newsreader", Georgia, serif;
+  --ui: "Inter Tight", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 32px 64px 64px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 24px 24px 48px;
+  }
+}

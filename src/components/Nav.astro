@@ -1,0 +1,79 @@
+---
+import EigenMark from './EigenMark.astro';
+
+const links = [
+  { id: 'liv4all', label: 'liv4all' },
+  { id: 'advisory', label: 'advisory' },
+  { id: 'writing', label: 'writing' },
+  { id: 'about', label: 'about' },
+];
+---
+
+<nav class="nav">
+  <a class="brand" href="/" aria-label="Eigenstack home">
+    <EigenMark size={22} color="var(--ink)" />
+    <span class="brand-name">Eigenstack</span>
+  </a>
+
+  <div class="nav-links">
+    {links.map((l) => <a href={`#${l.id}`}>{l.label}</a>)}
+  </div>
+
+  <div class="meta">EST. 2026 · MELBOURNE</div>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    gap: 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .brand-name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover {
+    color: var(--ink);
+  }
+
+  .meta {
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 700px) {
+    .nav-links,
+    .meta {
+      display: none;
+    }
+  }
+</style>

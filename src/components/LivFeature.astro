@@ -1,0 +1,270 @@
+---
+---
+
+<section id="liv4all" class="section">
+  <header class="section-head">
+    <h2>The Product</h2>
+    <div class="folio">01 / 01 · APR 2026</div>
+  </header>
+
+  <a class="card" href="https://liv4all.com">
+    <div class="copy">
+      <div class="status">● Live · waitlist open</div>
+      <div class="title">
+        Liv4All<span class="dot">.</span>
+      </div>
+      <p class="desc">
+        A persistent AI agent that acts on your behalf. Manages calendars, triages
+        email, makes bookings. Not a chatbot. An agent that does things.
+      </p>
+      <div class="footer-row">
+        <div class="features">
+          <span>· always-on AI</span>
+          <span>· setup in 2 min</span>
+          <span>· data stays yours</span>
+        </div>
+        <div class="cta">
+          join waitlist
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+            <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview">
+      <div class="preview-glow"></div>
+      <div class="preview-status">● signups paused — waitlist open</div>
+      <div class="preview-mark">
+        <div class="liv">liv<span>.</span></div>
+        <div class="liv-tag">your AI personal assistant</div>
+      </div>
+      <div class="preview-tag">less admin. more living.</div>
+      <div class="preview-url">liv4all.com →</div>
+    </div>
+  </a>
+</section>
+
+<style>
+  .section {
+    padding-top: 8px;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  .section-head h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .folio {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.5px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    transition: transform 0.35s, box-shadow 0.35s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25);
+  }
+
+  .copy {
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: -1.6px;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .title .dot {
+    color: var(--accent);
+  }
+
+  .desc {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.55;
+    text-wrap: pretty;
+    margin: 0 0 24px;
+  }
+
+  .footer-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .features {
+    display: flex;
+    gap: 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.4px;
+    flex-wrap: wrap;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .card:hover .cta {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .preview {
+    border-left: 1px solid var(--rule);
+    min-height: 360px;
+    background: #0b0b10;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preview-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 65% 35%,
+      rgba(168, 135, 255, 0.32),
+      transparent 60%
+    );
+  }
+
+  .preview-status {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  .preview-mark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 56px;
+  }
+
+  .liv {
+    font-family: var(--mono);
+    font-size: 96px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+
+  .liv span {
+    color: #a887ff;
+  }
+
+  .liv-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 14px;
+    letter-spacing: 0.4px;
+  }
+
+  .preview-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 28px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .preview-url {
+    position: absolute;
+    bottom: 22px;
+    right: 28px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .card {
+      grid-template-columns: 1fr;
+    }
+
+    .copy {
+      padding: 32px 28px;
+    }
+
+    .title {
+      font-size: 44px;
+    }
+
+    .preview {
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      min-height: 280px;
+    }
+
+    .liv {
+      font-size: 72px;
+    }
+
+    .preview-mark {
+      padding: 0 32px;
+    }
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+// Headline matches the "characteristic" variant from the design.
+---
+
+<section class="hero">
+  <div class="lead">
+    <div class="kicker">◇ Holding company</div>
+    <h1>
+      A small studio<br />
+      for <em>characteristic</em><br />
+      things.
+    </h1>
+  </div>
+
+  <p class="standfirst">
+    Eigenstack Pty Ltd is the company behind Liv4All. Side project, taken seriously.
+    Available occasionally for advisory work on AI adoption and engineering leadership.
+  </p>
+</section>
+
+<style>
+  .hero {
+    padding: 80px 0 88px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: end;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: 84px;
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -2.4px;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .standfirst {
+    margin: 0;
+    padding-bottom: 14px;
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 56px 0 64px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 12vw, 72px);
+      letter-spacing: -1.6px;
+    }
+
+    .standfirst {
+      padding-bottom: 0;
+    }
+  }
+</style>

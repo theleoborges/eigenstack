@@ -7,9 +7,34 @@
   --rule: #c9c2b3;
   --accent: #5e7a4b;
 
+  --card-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25);
+  --row-hover: rgba(0, 0, 0, 0.025);
+
   --display: "Newsreader", Georgia, serif;
   --ui: "Inter Tight", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #14130f;
+  --paper: #1c1b16;
+  --ink: #ede8db;
+  --ink-soft: #a39e91;
+  --ink-faint: #6e6a5f;
+  --rule: #322f28;
+  --accent: #9bbf7e;
+
+  --card-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.6);
+  --row-hover: rgba(255, 255, 255, 0.03);
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 *,

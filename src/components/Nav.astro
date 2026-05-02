@@ -19,8 +19,74 @@ const links = [
     {links.map((l) => <a href={`#${l.id}`}>{l.label}</a>)}
   </div>
 
-  <div class="meta">EST. 2026 · MELBOURNE</div>
+  <div class="right">
+    <span class="meta">EST. 2026 · MELBOURNE</span>
+    <button
+      type="button"
+      class="theme-toggle"
+      data-theme-toggle
+      role="switch"
+      aria-checked="false"
+      aria-label="Dark mode"
+      title="Toggle dark mode"
+    >
+      <svg
+        class="icon icon-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path
+          d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+        ></path>
+      </svg>
+      <svg
+        class="icon icon-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
+      </svg>
+      <span class="knob" aria-hidden="true"></span>
+    </button>
+  </div>
 </nav>
+
+<script is:inline>
+  (function () {
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (!btn) return;
+    function sync() {
+      var dark =
+        document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.setAttribute('aria-checked', dark ? 'true' : 'false');
+    }
+    sync();
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch (e) {}
+      sync();
+    });
+    // Stay in sync if the OS-pref watcher flips the attribute.
+    new MutationObserver(sync).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+  })();
+</script>
 
 <style>
   .nav {
@@ -63,11 +129,84 @@ const links = [
     color: var(--ink);
   }
 
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
   .meta {
     font-size: 11px;
     color: var(--ink-faint);
     font-family: var(--mono);
     letter-spacing: 1px;
+  }
+
+  .theme-toggle {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--ink-faint);
+  }
+
+  .theme-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    color: var(--ink-faint);
+    transform: translateY(-50%);
+    transition: color 0.25s;
+    pointer-events: none;
+  }
+
+  .icon-sun {
+    left: 6px;
+  }
+
+  .icon-moon {
+    right: 6px;
+  }
+
+  .knob {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ink);
+    transform: translate(0, -50%);
+    transition: transform 0.25s ease, background-color 0.25s;
+    pointer-events: none;
+  }
+
+  /* Slide knob to the right and recolor the icon underneath for contrast. */
+  :global([data-theme='dark']) .knob {
+    transform: translate(24px, -50%);
+  }
+
+  :global([data-theme='light']) .icon-sun {
+    color: var(--bg);
+  }
+
+  :global([data-theme='dark']) .icon-moon {
+    color: var(--bg);
   }
 
   @media (max-width: 700px) {

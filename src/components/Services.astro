@@ -1,0 +1,207 @@
+---
+import { BOOKING_URL } from '../config';
+
+const services = [
+  {
+    n: '01',
+    title: 'Agent Build-outs',
+    lede: 'Production-grade AI agents, embedded in your product or your operations.',
+    body:
+      'We take agents past the demo stage: scoping, architecture, tool design, evals, guardrails and deployment. You end up with a system your team can run and extend — not a prototype that dies in a notebook.',
+    items: [
+      'Scoping & architecture',
+      'Working agent in production',
+      'Eval harness & guardrails',
+      'Handover, docs & training',
+    ],
+  },
+  {
+    n: '02',
+    title: 'AI Strategy Assessment',
+    lede: 'A clear-eyed read of where AI genuinely moves the needle for your business.',
+    body:
+      'A short, sharp engagement that maps your highest-leverage AI opportunities, makes the build-vs-buy calls, and gives you a roadmap and risk picture you can defend to the board — without the hype.',
+    items: [
+      'Opportunity & feasibility map',
+      'Prioritised roadmap',
+      'Build / buy / wait calls',
+      'Risk & readiness review',
+    ],
+  },
+  {
+    n: '03',
+    title: 'Workshops & Enablement',
+    lede: 'Hands-on sessions that take your team from AI-curious to AI-capable.',
+    body:
+      'Executive briefings and engineering deep-dives tailored to your stack and your data — agent patterns, prompting that holds up in production, and the judgement to know what to automate and what to leave alone.',
+    items: [
+      'Executive briefings',
+      'Engineering deep-dives',
+      'Agent & prompting patterns',
+      'Adoption playbook',
+    ],
+  },
+];
+---
+
+<section id="services" class="section">
+  <header class="section-head reveal">
+    <h2>Services</h2>
+    <div class="folio">What we do</div>
+  </header>
+
+  <div class="list">
+    {
+      services.map((s) => (
+        <article class="service reveal">
+          <div class="num">{s.n}</div>
+          <div class="main">
+            <h3>{s.title}</h3>
+            <p class="lede">{s.lede}</p>
+            <p class="body">{s.body}</p>
+          </div>
+          <ul class="items">
+            {s.items.map((it) => (
+              <li>{it}</li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="after reveal">
+    <span>Not sure which fits? Start with a conversation.</span>
+    <a class="btn-ghost" href={BOOKING_URL}>Book an intro call →</a>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding-top: 96px;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+
+  .section-head h2 {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .folio {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 40px;
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .service:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--accent);
+    padding-top: 8px;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 16px;
+  }
+
+  .lede {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0 0 12px;
+    text-wrap: pretty;
+    max-width: 52ch;
+  }
+
+  .body {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+    text-wrap: pretty;
+    max-width: 58ch;
+  }
+
+  .items {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    color: var(--ink-soft);
+    align-self: start;
+  }
+
+  .items li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .items li::before {
+    content: '·  ';
+    color: var(--accent);
+  }
+
+  .items li:first-child {
+    border-top: 1px solid var(--rule);
+  }
+
+  .after {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 24px 0 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding-top: 64px;
+    }
+
+    .service {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 36px 0;
+    }
+
+    .num {
+      padding-top: 0;
+    }
+  }
+</style>

@@ -1,49 +1,63 @@
 ---
-// Headline matches the "characteristic" variant from the design.
+import { BOOKING_URL } from '../config';
 ---
 
 <section class="hero">
-  <div class="lead">
-    <div class="kicker">◇ Holding company</div>
-    <h1>
-      Building a few<br />
-      <em>good</em> things,<br />
-      slowly.
-    </h1>
+  <div class="kicker reveal">◇ Applied AI Consulting</div>
+
+  <h1 class="reveal">
+    Applied AI, from strategy<br />
+    to <em>shipped</em> agents.
+  </h1>
+
+  <div class="below reveal">
+    <p class="standfirst">
+      Eigenstack helps ambitious teams put AI to work — assessing where it
+      genuinely moves the needle, training your people, and building
+      production-grade agent systems. We practice what we advise:
+      we ship our own agents too.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href={BOOKING_URL}>Book an intro call</a>
+      <a class="btn-ghost" href="#services">Explore services ↓</a>
+    </div>
   </div>
 
-  <p class="standfirst">
-    Eigenstack Pty Ltd is the company behind Liv4All. Side project, taken seriously.
-    Available occasionally for advisory work on AI adoption and engineering leadership.
-  </p>
+  <div class="ticker reveal" aria-hidden="true">
+    <span>Agent build-outs</span>
+    <span class="sep">◇</span>
+    <span>AI strategy assessment</span>
+    <span class="sep">◇</span>
+    <span>Workshops &amp; enablement</span>
+    <span class="sep">◇</span>
+    <span>Sydney · working worldwide</span>
+  </div>
 </section>
 
 <style>
   .hero {
-    padding: 80px 0 88px;
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 48px;
-    align-items: end;
+    padding: 96px 0 0;
   }
 
   .kicker {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
     color: var(--accent);
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   h1 {
     font-family: var(--display);
-    font-size: 84px;
-    line-height: 1.02;
+    font-size: clamp(56px, 8.4vw, 110px);
+    line-height: 1.0;
     font-weight: 400;
-    letter-spacing: -2.4px;
+    letter-spacing: -0.03em;
     margin: 0;
-    text-wrap: pretty;
+    text-wrap: balance;
+    max-width: 20ch;
   }
 
   h1 em {
@@ -51,29 +65,64 @@
     color: var(--accent);
   }
 
+  .below {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) auto;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-top: 44px;
+  }
+
   .standfirst {
     margin: 0;
-    padding-bottom: 14px;
     color: var(--ink-soft);
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 17px;
+    line-height: 1.6;
     text-wrap: pretty;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .ticker {
+    margin-top: 72px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .ticker .sep {
+    color: var(--accent);
   }
 
   @media (max-width: 900px) {
     .hero {
+      padding-top: 64px;
+    }
+
+    .below {
       grid-template-columns: 1fr;
       gap: 28px;
-      padding: 56px 0 64px;
+      margin-top: 32px;
     }
 
-    h1 {
-      font-size: clamp(48px, 12vw, 72px);
-      letter-spacing: -1.6px;
-    }
-
-    .standfirst {
-      padding-bottom: 0;
+    .ticker {
+      margin-top: 48px;
+      gap: 12px;
     }
   }
 </style>

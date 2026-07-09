@@ -1,0 +1,150 @@
+---
+const links = [
+  { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/theleoborges/' },
+  { label: 'GitHub ↗', href: 'https://github.com/theleoborges/' },
+  { label: 'The LeadTech Diet ↗', href: 'https://leonardoborges.substack.com' },
+];
+---
+
+<section id="about" class="section">
+  <div class="grid">
+    <div class="side reveal">
+      <div class="kicker">◇ About</div>
+      <div class="monogram" aria-hidden="true">LB</div>
+      <div class="name">Leonardo Borges</div>
+      <div class="role">Founder &amp; Principal</div>
+      <div class="links">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+
+    <div class="bio reveal">
+      <h3>Advice from someone who still <em>builds</em>.</h3>
+      <p>
+        Eigenstack is led by Leonardo Borges, a hands-on engineering leader
+        who has spent his career building software — and the teams behind it —
+        across consultancies, scale-ups and his own products.
+      </p>
+      <p>
+        These days that means applied AI: designing and shipping agent systems,
+        helping leadership teams cut through the hype, and writing about the
+        craft in <a href="https://leonardoborges.substack.com">The LeadTech Diet</a>,
+        a newsletter on AI and engineering leadership. When you work with
+        Eigenstack, you work with him — no bench, no bait-and-switch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 96px 0;
+    margin-top: 96px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 64px;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .monogram {
+    width: 88px;
+    height: 88px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .name {
+    font-family: var(--display);
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .links a:hover {
+    color: var(--accent);
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: clamp(34px, 4.4vw, 52px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+
+  h3 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .bio p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0 0 16px;
+    max-width: 60ch;
+    text-wrap: pretty;
+  }
+
+  .bio a {
+    color: var(--ink);
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding: 64px 0;
+      margin-top: 64px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+</style>

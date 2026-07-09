@@ -1,0 +1,84 @@
+---
+import { BOOKING_URL, EMAIL } from '../config';
+---
+
+<section id="contact" class="cta-band reveal">
+  <div class="kicker">◇ Start here</div>
+  <h3>
+    Got a problem <em>AI</em> should<br />be solving for you?
+  </h3>
+  <div class="actions">
+    <a class="btn" href={BOOKING_URL}>Book an intro call</a>
+    <a class="alt" href={`mailto:${EMAIL}`}>or write to {EMAIL} →</a>
+  </div>
+  <div class="meta">Sydney · working worldwide · limited engagements</div>
+</section>
+
+<style>
+  .cta-band {
+    margin-top: 8px;
+    padding: 96px 0;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: clamp(40px, 6.4vw, 76px);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.03;
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+
+  h3 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .alt {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.15s;
+  }
+
+  .alt:hover {
+    color: var(--accent);
+  }
+
+  .meta {
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 900px) {
+    .cta-band {
+      padding: 64px 0;
+    }
+  }
+</style>

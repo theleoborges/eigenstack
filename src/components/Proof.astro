@@ -1,0 +1,178 @@
+---
+---
+
+<section id="work" class="section">
+  <div class="grid">
+    <div class="intro reveal">
+      <div class="kicker">◇ Proof of work</div>
+      <h3>We ship our <em>own</em> agents.</h3>
+      <p>
+        Advice is cheap; production is not. Eigenstack builds and operates
+        Liv4All, a consumer AI agent that runs real people's lives every day.
+        Everything we recommend to clients — evals, guardrails, agent
+        architecture — we've had to make work ourselves first.
+      </p>
+    </div>
+
+    <a class="card reveal" href="https://liv4all.com">
+      <div class="preview-glow"></div>
+      <div class="card-top">
+        <span class="status">● Live · waitlist open</span>
+        <span class="url">liv4all.com →</span>
+      </div>
+      <div class="mark">
+        <div class="liv">liv<span>.</span></div>
+        <div class="liv-tag">your AI personal assistant</div>
+      </div>
+      <p class="desc">
+        A persistent AI agent that acts on your behalf — manages calendars,
+        triages email, makes bookings. Not a chatbot. An agent that does things.
+      </p>
+    </a>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding-top: 96px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: clamp(36px, 4.6vw, 54px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+
+  h3 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .intro p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 32px 36px 30px;
+    background: #0b0b10;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    min-height: 340px;
+    transition: transform 0.35s, box-shadow 0.35s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
+  }
+
+  .preview-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 70% 25%,
+      rgba(168, 135, 255, 0.32),
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+  }
+
+  .mark {
+    position: relative;
+    margin-top: auto;
+  }
+
+  .liv {
+    font-family: var(--mono);
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+
+  .liv span {
+    color: #a887ff;
+  }
+
+  .liv-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 12px;
+    letter-spacing: 0.4px;
+  }
+
+  .desc {
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding-top: 64px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .card {
+      min-height: 300px;
+      padding: 26px 26px 24px;
+    }
+
+    .liv {
+      font-size: 60px;
+    }
+  }
+</style>

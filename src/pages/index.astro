@@ -2,19 +2,21 @@
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
-import LivFeature from '../components/LivFeature.astro';
+import Products from '../components/Products.astro';
+import Studio from '../components/Studio.astro';
 import Advisory from '../components/Advisory.astro';
 import Writing from '../components/Writing.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Base>
-  <main class="page">
-    <Nav />
+  <Nav />
+  <main>
     <Hero />
-    <LivFeature />
+    <Products />
+    <Studio />
     <Advisory />
     <Writing />
-    <Footer />
   </main>
+  <Footer />
 </Base>

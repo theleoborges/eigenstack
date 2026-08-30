@@ -1,79 +1,58 @@
----
-// Headline matches the "characteristic" variant from the design.
----
-
-<section class="hero">
-  <div class="lead">
-    <div class="kicker">◇ Holding company</div>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Eigenstack · Sydney, Australia</p>
     <h1>
-      Building a few<br />
-      <em>good</em> things,<br />
-      slowly.
+      A small studio.<br />
+      A few good products.
     </h1>
+    <p class="standfirst">
+      Eigenstack is an independent software studio. We design, build and run
+      consumer products end to end — currently, mostly
+      <a href="https://hakken.me">Hakken</a>.
+    </p>
   </div>
-
-  <p class="standfirst">
-    Eigenstack Pty Ltd is the company behind Liv4All. Side project, taken seriously.
-    Available occasionally for advisory work on AI adoption and engineering leadership.
-  </p>
-</section>
+</header>
 
 <style>
   .hero {
-    padding: 80px 0 88px;
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 48px;
-    align-items: end;
-  }
-
-  .kicker {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 24px;
+    padding: 112px 0 96px;
   }
 
   h1 {
-    font-family: var(--display);
-    font-size: 84px;
-    line-height: 1.02;
-    font-weight: 400;
-    letter-spacing: -2.4px;
+    font-size: clamp(44px, 8vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.03;
     margin: 0;
-    text-wrap: pretty;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
+    text-wrap: balance;
   }
 
   .standfirst {
-    margin: 0;
-    padding-bottom: 14px;
+    margin: 28px 0 0;
+    max-width: 560px;
+    font-size: 21px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
     color: var(--ink-soft);
-    font-size: 16px;
-    line-height: 1.55;
     text-wrap: pretty;
   }
 
-  @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 28px;
-      padding: 56px 0 64px;
-    }
+  .standfirst a {
+    color: var(--link);
+    text-decoration: none;
+  }
 
-    h1 {
-      font-size: clamp(48px, 12vw, 72px);
-      letter-spacing: -1.6px;
+  .standfirst a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 72px 0 64px;
     }
 
     .standfirst {
-      padding-bottom: 0;
+      font-size: 18px;
     }
   }
 </style>

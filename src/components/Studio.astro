@@ -1,0 +1,75 @@
+---
+const principles = [
+  {
+    t: 'Small by design',
+    d: 'No headcount goals, no growth theatre. A tiny team, senior by default, shipping products end to end — design, engineering, and operations.',
+  },
+  {
+    t: 'Products we use ourselves',
+    d: 'Everything we ship starts as something we wanted to exist. If we wouldn’t keep it on our own home screen, it doesn’t ship.',
+  },
+  {
+    t: 'Long-term by default',
+    d: 'We run our products for years, not quarters — and when one has run its course, we wind it down properly rather than letting it rot.',
+  },
+];
+---
+
+<section id="studio" class="studio">
+  <div class="wrap">
+    <p class="eyebrow">The studio</p>
+    <h2 class="section-title">Deliberately small.<br />Deliberately careful.</h2>
+
+    <div class="grid">
+      {
+        principles.map((p) => (
+          <div class="cell">
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .studio {
+    padding: 96px 0 64px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 820px) {
+    .studio {
+      padding: 64px 0 48px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+</style>

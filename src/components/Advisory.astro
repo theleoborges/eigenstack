@@ -1,141 +1,91 @@
 ---
-const pillars = [
-  { n: 'i', t: 'Engineering Leadership' },
-  { n: 'ii', t: 'AI Adoption' },
-  { n: 'iii', t: 'Agentic Software' },
-];
+const pillars = ['Engineering leadership', 'AI adoption', 'Agentic software'];
 ---
 
-<section id="advisory" class="section">
-  <div class="grid">
+<section id="advisory" class="advisory">
+  <div class="wrap inner">
     <div>
-      <div class="kicker">◇ Advisory</div>
-      <h3>
-        Available for the occasional <em>good problem</em>.
-      </h3>
-      <p>
-        One client at a time, generally remote, generally a day or two each month.
-        If your work overlaps with the topics on the right, get in touch.
+      <p class="eyebrow">Advisory</p>
+      <h2 class="section-title">Available for the occasional good problem.</h2>
+      <p class="body">
+        One client at a time, generally remote, generally a day or two each
+        month. If your work overlaps with the topics on the right, get in
+        touch.
       </p>
-      <a class="email" href="mailto:hello@eigenstack.co">hello@eigenstack.co →</a>
+      <a class="email" href="mailto:hello@eigenstack.co">hello@eigenstack.co ›</a>
     </div>
 
-    <div>
-      {
-        pillars.map((p, i) => (
-          <div class="pillar" data-first={i === 0}>
-            <div class="num">{p.n}.</div>
-            <div class="lbl">{p.t}</div>
-          </div>
-        ))
-      }
-    </div>
+    <ul class="pillars">
+      {pillars.map((p) => <li>{p}</li>)}
+    </ul>
   </div>
 </section>
 
 <style>
-  .section {
-    padding: 88px 0;
-    margin-top: 64px;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+  .advisory {
+    padding: 64px 0;
   }
 
-  .grid {
+  .inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 64px;
+    padding-top: 64px;
+    padding-bottom: 0;
+    border-top: 1px solid var(--hairline);
   }
 
-  .kicker {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-family: var(--display);
-    font-size: 44px;
-    font-weight: 400;
-    letter-spacing: -1px;
-    margin: 0 0 20px;
-    line-height: 1.05;
-    text-wrap: pretty;
-  }
-
-  h3 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  p {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.6;
+  .body {
+    margin: 20px 0 0;
     max-width: 460px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
     text-wrap: pretty;
-    margin: 0;
   }
 
   .email {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 28px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.4px;
-  }
-
-  .pillar {
-    padding: 18px 0;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    gap: 16px;
-    align-items: baseline;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .pillar[data-first='true'] {
-    border-top: 1px solid var(--rule);
-  }
-
-  .num {
-    font-family: var(--display);
-    font-size: 16px;
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .lbl {
-    font-family: var(--display);
-    font-size: 24px;
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 15px;
     font-weight: 500;
-    letter-spacing: -0.4px;
+    color: var(--link);
+    text-decoration: none;
   }
 
-  @media (max-width: 900px) {
-    .section {
-      padding: 56px 0;
-      margin-top: 40px;
-    }
+  .email:hover {
+    text-decoration: underline;
+  }
 
-    .grid {
+  .pillars {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+  }
+
+  .pillars li {
+    padding: 18px 0;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .pillars li:first-child {
+    border-top: 1px solid var(--hairline);
+  }
+
+  @media (max-width: 820px) {
+    .inner {
       grid-template-columns: 1fr;
       gap: 36px;
+      padding-top: 48px;
     }
 
-    h3 {
-      font-size: 32px;
-    }
-
-    .lbl {
-      font-size: 20px;
+    .pillars li {
+      font-size: 18px;
+      padding: 14px 0;
     }
   }
 </style>

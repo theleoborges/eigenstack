@@ -1,4 +1,14 @@
 ---
+const paper = {
+  eyebrow: 'Research · arXiv, Aug 2026',
+  title: 'The Tool-to-Entity Threshold',
+  subtitle: 'Parasocial dynamics of personalised AI agents in shared social spaces',
+  authors: 'Leonardo Borges & Asif Q. Gill, University of Technology Sydney',
+  summary:
+    'Give an agent a name, a face and a phone number and people stop operating it and start relating to it. A framework for the six design choices that cross that line, and what happens when such an agent joins a group chat.',
+  href: 'https://arxiv.org/abs/2608.13586',
+};
+
 const posts = [
   {
     n: '#42',
@@ -23,11 +33,22 @@ const posts = [
 
 <section id="writing" class="writing">
   <div class="wrap">
+    <p class="eyebrow">Writing</p>
+    <h2 class="section-title">Writing &amp; research.</h2>
+
+    <a class="paper" href={paper.href}>
+      <div class="paper-eyebrow">{paper.eyebrow}</div>
+      <h3>{paper.title}</h3>
+      <p class="paper-sub">{paper.subtitle}</p>
+      <p class="paper-summary">{paper.summary}</p>
+      <p class="paper-authors">{paper.authors}</p>
+      <span class="link">
+        Read on arXiv <span class="chev-link">›</span>
+      </span>
+    </a>
+
     <div class="head">
-      <div>
-        <p class="eyebrow">Writing</p>
-        <h2 class="section-title">From The Steel Thread.</h2>
-      </div>
+      <h3 class="list-title">From The Steel Thread</h3>
       <a class="all" href="https://leonardoborges.substack.com">All issues ›</a>
     </div>
 
@@ -51,12 +72,98 @@ const posts = [
     padding: 64px 0 96px;
   }
 
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  /* ---- featured paper ---- */
+  .paper {
+    display: block;
+    padding: 40px 44px;
+    background: var(--card);
+    border-radius: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .paper:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+  }
+
+  .paper-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  .paper h3 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+
+  .paper-sub {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .paper-summary {
+    max-width: 620px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    text-wrap: pretty;
+  }
+
+  .paper-authors {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 22px;
+  }
+
+  .link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--link);
+  }
+
+  .chev-link {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .paper:hover .chev-link {
+    transform: translateX(3px);
+  }
+
+  /* ---- newsletter list ---- */
   .head {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     gap: 16px;
-    margin-bottom: 32px;
+    margin: 56px 0 16px;
+  }
+
+  .list-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
   }
 
   .all {
@@ -109,6 +216,14 @@ const posts = [
   }
 
   @media (max-width: 640px) {
+    .paper {
+      padding: 28px 24px;
+    }
+
+    .paper h3 {
+      font-size: 26px;
+    }
+
     .row {
       grid-template-columns: 44px 1fr 16px;
       gap: 12px;

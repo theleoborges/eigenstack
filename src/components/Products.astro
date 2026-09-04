@@ -18,7 +18,10 @@ const smallProducts = [
     status: 'Closed to new sign-ups · winding down',
     statusKind: 'sunset',
     tagline: 'An AI chief of staff, on Telegram.',
-    desc: 'A persistent AI agent that acted on your behalf — managing calendars, triaging email, making bookings. Liv is being retired; much of what we learned building it went straight into Hakken.',
+    // TODO(leo): the paper's deployment was WhatsApp + Signal; this card says
+    // Telegram only. If Liv ran on all three, widen the tagline. If the research
+    // agent was a sibling build, keep the wording below vague on purpose.
+    desc: 'A persistent AI agent that acted on your behalf — managing calendars, triaging email, making bookings. Liv is being retired; what we learned building it went into Hakken, and into a paper on what happens when an agent stops being a tool.',
     tileClass: 'tile-liv',
     mark: 'liv.',
   },

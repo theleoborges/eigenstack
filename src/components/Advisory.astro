@@ -15,9 +15,15 @@ const pillars = ['Engineering leadership', 'AI adoption', 'Agentic software'];
       <a class="email" href="mailto:hello@eigenstack.co">hello@eigenstack.co ›</a>
     </div>
 
-    <ul class="pillars">
-      {pillars.map((p) => <li>{p}</li>)}
-    </ul>
+    <div class="side">
+      <ul class="pillars">
+        {pillars.map((p) => <li>{p}</li>)}
+      </ul>
+      <p class="recent">
+        Recent:
+        <a href="https://arxiv.org/abs/2608.13586">a framework for AI agents in shared social spaces ›</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -57,11 +63,30 @@ const pillars = ['Engineering leadership', 'AI adoption', 'Agentic software'];
     text-decoration: underline;
   }
 
+  .side {
+    align-self: center;
+  }
+
   .pillars {
     list-style: none;
     margin: 0;
     padding: 0;
-    align-self: center;
+  }
+
+  .recent {
+    margin: 20px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+
+  .recent a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .recent a:hover {
+    text-decoration: underline;
   }
 
   .pillars li {
